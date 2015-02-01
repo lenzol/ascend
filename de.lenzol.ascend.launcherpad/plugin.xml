@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.lenzol.ascend.launcherpad.controlcentre">
+            <command
+                  commandId="de.lenzol.ascend.launcherpad.configuration"
+                  label="Configuration"
+                  style="pulldown">
+            </command>
+            <command
+                  commandId="de.lenzol.ascend.launcherpad.closeall"
+                  label="Close all"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:de.lenzol.ascend.launcherpad.configuration">
+         <dynamic
+               class="de.lenzol.ascend.laucherpad.ui.menu.LaucherpadDynamicMenu"
+               id="de.lenzol.ascend.launcherpad.dynamicmenu">
+         </dynamic>
+         <separator
+               name="de.lenzol.ascend.launcherpad.separator"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.lenzol.ascend.launcherpad.openconfiguration"
+               label="Configure..."
+           de.lenzol.ascend.launcherpad.configstip="Configure launcher pad">
+         </command>
+         <command
+               commandId="de.lenzol.ascend.launcherpad.command7"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
