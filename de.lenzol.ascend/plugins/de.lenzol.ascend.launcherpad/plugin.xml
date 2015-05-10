@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.lenzol.ascend.launcherpad.toolbar">
+            <command
+                  commandId="de.lenzol.ascend.launcherpad.command.launchlast"
+                  icon="icons/run.gif"
+                  label="Launch Last"
+                  style="pulldown">
+            </command>
+            <command
+                  commandId="de.lenzol.ascend.launcherpad.command.killall"
+                  icon="icons/killall.gif"
+                  label="Kill all"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:de.lenzol.ascend.launcherpad.command.launchlast">
+         <dynamic
+               class="de.lenzol.ascend.laucherpad.ui.menu.LaucherpadDynamicMenu"
+               id="de.lenzol.ascend.launcherpad.menu.dynamic">
+         </dynamic>
+         <separator
+               name="de.lenzol.ascend.launcherpad.separator"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.lenzol.ascend.launcherpad.command.configure"
+               icon="icons/configuration.gif"
+               label="Configure..."
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="de.lenzol.ascend.launcherpad.command.killall"
+            name="Kill All">
+      </command>
+      <command
+            id="de.lenzol.ascend.launcherpad.command.configure"
+            name="Configure">
+      </command>
+      <command
+            id="de.lenzol.ascend.launcherpad.command.launchlast"
+            name="Launch Last">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.lenzol.ascend.laucherpad.ui.menu.KillAllHandler"
+            commandId="de.lenzol.ascend.launcherpad.command.killall">
+      </handler>
+      <handler
+            class="de.lenzol.ascend.laucherpad.ui.menu.ConfigureHandler"
+            commandId="de.lenzol.ascend.launcherpad.command.configure">
+      </handler>
+      <handler
+            class="de.lenzol.ascend.laucherpad.ui.menu.LaunchLastHandler"
+            commandId="de.lenzol.ascend.launcherpad.command.launchlast">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="de.lenzol.ascend.laucherpad.ui.preferences.PreferencePage"
+            id="de.lenzol.ascend.launcherpad.preferencepage"
+            name="Launcher Pad">
+      </page>
+   </extension>
+
+</plugin>

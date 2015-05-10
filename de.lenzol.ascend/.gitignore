@@ -1,0 +1,18 @@
+## No derived resources
+target/
+
+## No Eclipse settings
+.project
+.classpath
+.settings/
+
+## No Checkstyle plugin settings
+.checkstyle
+
+## various other file types we don't want to have in the repository:
+.DS_Store
+*~
+*#
+*.licensed
+*.aux
+*_trace
